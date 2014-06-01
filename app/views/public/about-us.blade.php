@@ -24,7 +24,7 @@
             <div class="grid_3 alpha">
                 <a href="#" class="img1">
                     <div class="rotate_section">
-                        <img src="/static/images/page1_icon1.jpg" alt="" class="no_resize">
+                        <img src="/static/img/page1_icon1.png" alt="" class="no_resize">
                     </div>
                 </a>
 
@@ -39,7 +39,7 @@
             <div class="grid_3">
                 <a href="#" class="img1">
                     <div class="rotate_section">
-                        <img src="/static/images/page1_icon2.jpg" alt="" class="no_resize">
+                        <img src="/static/img/page1_icon2.png" alt="" class="no_resize">
                     </div>
                 </a>
 
@@ -54,7 +54,7 @@
             <div class="grid_3">
                 <a href="#" class="img1">
                     <div class="rotate_section">
-                        <img src="/static/images/page1_icon3.jpg" alt="" class="no_resize">
+                        <img src="/static/img/page1_icon3.png" alt="" class="no_resize">
                     </div>
                 </a>
 
@@ -69,7 +69,7 @@
             <div class="grid_3 omega">
                 <a href="#" class="img1">
                     <div class="rotate_section">
-                        <img src="/static/images/page1_icon4.jpg" alt="" class="no_resize">
+                        <img src="/static/img/page1_icon4.png" alt="" class="no_resize">
                     </div>
                 </a>
 

@@ -40,8 +40,8 @@ ul.sf-menu>li{
 ul.sf-menu>li:first-child{border-left:none;}
 ul.sf-menu>li>a{
 	display:block;
-	color:#91e3eb;
-	font:19px/24px "Fjalla One", Georgia, sans-serif;
+	color:#f6e1b9;
+	font:16px/20px "Fjalla One", Georgia, sans-serif;
 	/*padding:0 36px 0 36px;*/
 	padding: 0 1px;
 	text-align: center;
@@ -88,7 +88,7 @@ ul.sf-menu>li.current>a, ul.sf-menu>li.sfHover>a, ul.sf-menu>li>a:hover{
 	/*font-weight: bold;*/
 }
 footer ul.sf-menu>li.current>a, footer ul.sf-menu>li.sfHover>a, footer ul.sf-menu>li>a:hover{
-	color:#128e9b; 
+	color:#f6e1b9;
 }
 ul.sf-menu>li.current>a strong, ul.sf-menu>li.sfHover>a strong, ul.sf-menu>li>a:hover strong{height: 0px;}
 /*submenu1*/
@@ -97,7 +97,7 @@ ul.sf-menu>li.current>a strong, ul.sf-menu>li.sfHover>a strong, ul.sf-menu>li>a:
 	top:42px;
 	width:175px;
 	z-index:99;
-	background: #0bc0d3; 
+	background: #f0bf4f;
 	padding:23px 0 15px 0;
 	-moz-box-shadow: 0 5px 5px rgba(0,0,0,0.2);
 	-webkit-box-shadow: 0 5px 5px rgba(0,0,0,0.2);
@@ -121,7 +121,7 @@ ul.sf-menu>li.current>a strong, ul.sf-menu>li.sfHover>a strong, ul.sf-menu>li>a:
 	text-align: center;
 }
 .sf-menu>li>ul>li:hover, ul.sf-menu>li>ul>li.sfHover{}
-.sf-menu>li>ul>li>a:hover, ul.sf-menu>li>ul>li.sfHover a {color:#0bc0d3; background: #fff; text-decoration: none;}
+.sf-menu>li>ul>li>a:hover, ul.sf-menu>li>ul>li.sfHover a {color:#f0bf4f; background: #fff; text-decoration: none;}
 
 /*submenu2*/
 .sf-menu li li ul {
@@ -157,14 +157,14 @@ ul.sf-menu>li.current>a strong, ul.sf-menu>li.sfHover>a strong, ul.sf-menu>li>a:
 					
 .sf-menu li li li a {
 	display:block;
-	color:#0bc0d3 !important;
+	color:#f0bf4f !important;
 	font:12px/12px Arial, sans-serif;
 	padding: 6px 0;
 	text-indent: 27px;
 	background: none !important
 	}
 .sf-menu li li li:hover {}
-.sf-menu li li li a:hover {color:#fff !important; background: #0bc0d3 !important; text-decoration: none;}
+.sf-menu li li li a:hover {color:#fff !important; background: #f0bf4f !important; text-decoration: none;}
 
 
 /*==================================RESPONSIVE LAYOUTS===============================================*/

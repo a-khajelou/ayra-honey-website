@@ -53,21 +53,23 @@
 <div id="back-top"></div>
 <div class="main">
     <div class="div-content">
-
-        <div class="container_12">
-            <div class="grid_12">
+<!--
+        <div class="container_12" style="width: 100%">
+            <div class="grid_12" style="margin: 0; width: 100%">
                 <div class="top_section">
-                    <h1><a href="index-2.html"><img src="/static/images/logo.png" alt="Mellis"></a></h1>
+                    <h1><a href="index-2.html"></a></h1>
 
-                    <p><strong class="icon-phone"></strong> Company phone number</p>
+
 
                     <div class="clear"></div>
                 </div>
             </div>
-        </div>
+        </div>-->
+        <img src="/static/img/header.png" alt="Mellis">
 
         <!--==============================header=================================-->
         <header>
+
             <div class="container_12">
                 <div class="grid_12">
                     <nav>

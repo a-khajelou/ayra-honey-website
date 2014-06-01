@@ -4,11 +4,7 @@
         <div class="container_12">
             <div class="grid_12">
                 <div class="footer_cols">
-                    <div class="grid_3 alpha">
-                        <a href="index-2.html" class="logo_footer"><img src="/static/images/logo_footer.png"
-                                                                        alt="Mellis"
-                                                                        class="no_resize"></a>
-                    </div>
+
 
                     <div class="grid_3">
                         <nav>
