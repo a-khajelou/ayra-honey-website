@@ -41,7 +41,7 @@ ul.sf-menu>li:first-child{border-left:none;}
 ul.sf-menu>li>a{
 	display:block;
 	color:#f6e1b9;
-	font:16px/20px "Fjalla One", Georgia, sans-serif;
+	font:16px/17px "Fjalla One", Georgia, sans-serif;
 	/*padding:0 36px 0 36px;*/
 	padding: 0 1px;
 	text-align: center;

@@ -65,7 +65,7 @@
                 </div>
             </div>
         </div>-->
-        <img src="/static/img/header.png" alt="Mellis">
+        <img src="/static/img/header.png" alt="Mellis" style="width: 100%">
 
         <!--==============================header=================================-->
         <header>
