@@ -1,0 +1,13 @@
+<ol class="breadcrumb wi-devider" >
+  <li class="active"><i class="fa fa-dashboard"></i>&nbsp;{{{trans('general.tags')}}}</li>
+</ol>
+<div class="form-group input-group">
+  <?php
+    $filled='/admin/json/'.$model.'/';
+    if($obj->id !=NULL)
+      $filled.=$obj->id;
+    else
+      $filled.='-1';
+  ?>
+  <input data-filled='{{$filled}}' type="text" autocomplete="on" name="{{$tag_id}}" placeholder="Tags" style="width:9em;" class="input-medium tm-input tm-input-success" data-original-title=""/>
+</div>
