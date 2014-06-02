@@ -66,6 +66,12 @@
             </div>
         </div>-->
         <img src="/static/img/header.png" alt="Mellis" style="width: 100%">
+        <div class="flags">
+         <a href="#">  <img src="/static/img/United Kingdom(Great Britain).png" title="English"></a>
+            &nbsp;
+          <a href="#"> <img src="/static/img/Russian Federation.png" title="Russian"> </a>
+
+        </div>
 
         <!--==============================header=================================-->
         <header>

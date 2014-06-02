@@ -435,6 +435,13 @@ a{
 /*-------- end search section --------*/
 
 /************Header************/
+.flags{
+
+    position: absolute;
+    top: 10px;
+    left: 20px;
+
+}
 header{
 	position: relative;
 	padding-bottom: 0;
