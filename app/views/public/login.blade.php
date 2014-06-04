@@ -5,8 +5,17 @@
 
         <img src="/static/images/big_pic1.jpg" alt="" class="img3">
 
-        <!-- TODO : Edit here ! -->
 
+
+        <div class="login-form">
+            <form name="" action="">
+                <label class="">User Name:</label>
+                <input type="text" name="" placeholder="User Name" class="input-sm">
+                <label class="">Password:</label>
+                <input type="password" name="" placeholder="Password" class="input-sm">
+                <input type="submit" class="btn btn-warning">
+            </form>
+        </div>
 
     </div>
 </div>
