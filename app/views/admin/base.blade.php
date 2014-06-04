@@ -11,6 +11,9 @@
     ?>
     <title>{{$end}} page - Error Admin</title>
 
+    <script src="/static/ckeditor/ckeditor.js"></script>
+    <link rel="stylesheet" href="/static/ckeditor/sample.css">
+
     <!-- Bootstrap core CSS -->
     <link href="/static/css/bootstrap.css" rel="stylesheet">
     <link href="/static/css/tagmanager.css" rel="stylesheet">

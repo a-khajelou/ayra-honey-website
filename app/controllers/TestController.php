@@ -14,4 +14,8 @@ class TestController extends BaseController {
     public function postGet(){
         return View::make('public.test')->with('blogPost',Input::get('blog_post'));
     }
+
+    public function getView(){
+        return View::make('public.view_test');
+    }
 }

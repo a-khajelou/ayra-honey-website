@@ -23,6 +23,7 @@ Route::group(
 
         Route::resource('slider', 'SliderController');
         Route::resource('honey', 'HoneyController');
+        Route::resource('blog', 'BlogController');
 
         Route::resource('tags', 'TagController', array('only' => array('index', 'delete')));
         Route::any('json/{type?}/{id?}', 'TagController@handle');
