@@ -1,5 +1,5 @@
 /****Subscribe Form****/
-#subscribe-form{
+#subscribe-form,#login-form{
 	position: relative;
 	display: block;
 	margin-top: 0;
@@ -12,7 +12,7 @@
   -o-transition: all 0.6s ease;
   transition: all 0.6s ease;
 }
-#subscribe-form input {
+#subscribe-form input,#login-form input {
 		 border:1px solid #fff;
 		 background:none;
 		 color:#fff;
@@ -31,14 +31,14 @@
 		-webkit-box-sizing: border-box; /* Safari */
 		border-radius: 0;
 	}
-	#subscribe-form label {
+	#subscribe-form label,#login-form label {
 		display:inline-block;
 		min-height: 53px;
 		position: relative;
 	
 		width: 100%;
 }
-	#subscribe-form {
+	#subscribe-form,#login-form {
 		position: relative;
 	}
 	#subscribe-form .error {
@@ -79,14 +79,14 @@
 		-webkit-box-sizing: border-box; /* Safari */
 	}
 
-	#subscribe-form  .btns {
+	#subscribe-form  .btns,#login-form  .btns {
 		position:relative;
 		padding-top: 0px;
 		text-align: left;
 		display: inline-block;
 		margin-right: 15px;
 	}
-	#subscribe-form  .btns a {
+	#subscribe-form  .btns a,#login-form  .btns a {
 		margin: 4px 0 0 0 !important;
 		cursor: pointer;
 	}
