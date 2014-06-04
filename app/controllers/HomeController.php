@@ -27,8 +27,8 @@ class HomeController extends BaseController {
         return View::make('public.honey-products');
     }
 
-    public function getBees(){
-        return View::make('public.bees');
+    public function getBlog(){
+        return View::make('public.blog');
     }
 
     public function getFarmTour(){
@@ -41,6 +41,18 @@ class HomeController extends BaseController {
 
     public function getContactUs(){
         return View::make('public.contact-us');
+    }
+
+    public function getSetLocale(){
+        if(Input::has('dest')){
+            if(Input::get('dest') == 'en')
+                Session::put('current_locale', 'en');
+            else if (Input::get('dest') == 'ru')
+                Session::put('current_locale', 'ru');
+        }
+        $redirect=null;
+        try{$redirect=Redirect::back();}catch (Exception $e){$redirect=Redirect::to('/');}
+        return $redirect;
     }
 
 }

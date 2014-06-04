@@ -16,6 +16,7 @@
     <script src="/static/js/scroll_to_top.js"></script>
     <script src="/static/js/script.js"></script>
     <script src="/static/js/sForm.js"></script>
+    <script src="/static/js/forms.js"></script>
     <script src="/static/js/jquery.equalheights.js"></script>
     <script src="/static/js/superfish.js"></script>
     <script src="/static/js/jquery.mobilemenu.js"></script>
@@ -67,9 +68,9 @@
         </div>-->
         <img src="/static/img/header.png" alt="Mellis" style="width: 100%">
         <div class="flags">
-         <a href="#">  <img src="/static/img/United Kingdom(Great Britain).png" title="English"></a>
+         <a href="/set-locale?dest=en">  <img src="/static/img/United Kingdom(Great Britain).png" title="English" style="width:inherit;"></a>
             &nbsp;
-          <a href="#"> <img src="/static/img/Russian Federation.png" title="Russian"> </a>
+          <a href="/set-locale?dest=ru"> <img src="/static/img/Russian Federation.png" title="Russian" style="width:inherit;"> </a>
 
         </div>
 
@@ -80,9 +81,9 @@
                 <div class="grid_12">
                     <nav>
                         <ul class="sf-menu header_menu">
-                            <li @if(Request::is('about-us'))class="current"@endif><a href="/about-us">About us<strong></strong></a></li>
-                            <li @if(Request::is('honey-products'))class="current"@endif><a href="/honey-products"><span></span>Honey products<strong></strong></a>
-                                <ul class='submenu'>
+                            <li @if(Request::is('about-us'))class="current"@endif><a href="/about-us">{{trans('general.about_us')}}<strong></strong></a></li>
+                            <li @if(Request::is('honey-products'))class="current"@endif><a href="/honey-products"><span></span>{{trans('general.honey_products')}}<strong></strong></a>
+<!--                                <ul class='submenu'>
                                     <li><a href="#">Vestibulum iaculis</a></li>
                                     <li class='sub-menu'><a href="#">Fusce euismod conuat</a>
                                         <ul class='submenu2'>
@@ -92,22 +93,21 @@
                                         </ul>
                                     </li>
                                     <li><a href="#">Pellentesque</a></li>
-                                </ul>
+                                </ul>-->
                             </li>
 
-                            <li @if(Request::is('bees'))class="current"@endif><a href="/bees">Bees<strong></strong></a></li>
-                            <li @if(Request::is('farm-tour'))class="current"@endif><a href="/farm-tour">Farm tour<strong></strong></a></li>
-                            <li @if(Request::is('ordering'))class="current"@endif><a href="/ordering">Ordering<strong></strong></a></li>
-                            <li @if(Request::is('contact-us'))class="current"@endif><a href="/contact-us">Contact us<strong></strong></a></li>
+                            <li @if(Request::is('bees'))class="current"@endif><a href="/blog">{{trans('general.blog')}}<strong></strong></a></li>
+                            <li @if(Request::is('ordering'))class="current"@endif><a href="/ordering">{{trans('general.ordering')}}<strong></strong></a></li>
+                            <li @if(Request::is('contact-us'))class="current"@endif><a href="/contact-us">{{trans('general.contact_us')}}<strong></strong></a></li>
                         </ul>
                     </nav>
 
                     <form id="search" action="http://www.google.com/search" method="GET"
                           accept-charset="utf-8">
-                        <input type="text" name="q" value="" placeholder="Search here"
+                        <input type="text" name="q" value="" placeholder="{{trans('general.search_here')}}"
                                style=""/>
-                        <input type="hidden" name="domains" value="behsazan-ghaleb.ir" />
-                        <input type="hidden" name="sitesearch" value="behsazan-ghaleb.ir" />
+                        <input type="hidden" name="domains" value="ayra.error-swg.ir" />
+                        <input type="hidden" name="sitesearch" value="ayra.error-swg.ir" />
                         <a onClick="document.getElementById('search').submit()"></a>
                     </form>
 
@@ -117,7 +117,7 @@
 
         <div class="container_12">
             <div class="grid_12">
-                <p class="under_header_txt1">Welcome to our honey world!</p>
+                <p class="under_header_txt1">{{trans('general.welcome_note')}}</p>
                 <ul class="soc_icons">
                     <li><a href="#"><i class="icon-google-plus"></i></a></li>
                     <li><a href="#"><i class="icon-twitter"></i></a></li>

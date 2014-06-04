@@ -25,7 +25,7 @@ class UserController extends Controller
 
     public function postLogin()
     {
-        if (Auth::attempt(['username' => Input::get('username'), 'password' => Input::get('password')])) {
+        if (Auth::attempt(array('username' => Input::get('username'), 'password' => Input::get('password')))) {
             return Redirect::intended();
         }
         $errors = array();

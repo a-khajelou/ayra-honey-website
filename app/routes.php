@@ -19,11 +19,10 @@ Route::group(
         'prefix' => 'admin'
     ),
     function () {
-        Route::any('/' , 'ProductController@index');
+        Route::any('/' , 'HoneyController@index');
 
         Route::resource('slider', 'SliderController');
-
-        Route::resource('product', 'ProductController');
+        Route::resource('honey', 'HoneyController');
 
         Route::resource('tags', 'TagController', array('only' => array('index', 'delete')));
         Route::any('json/{type?}/{id?}', 'TagController@handle');

@@ -41,34 +41,6 @@ class SliderController extends \BaseController {
 				throw new Exception("this id ->".$id." doesn't exist in Slider table", 1);
 			}
 		}
-
-		$rules = array(
-
-			"title" => "required|min:4",
-			"description" => "required",
-    	);
-
-    	//here we add rules for those controller that has image to upload
-    	$rules =  array_merge($rules, self::getUploadsPhotoRules('slider'));
-
-
-		$validator = Validator::make(Input::all(), $rules);
-		if ($validator->fails()){
-			$errors = array('page'=>'slider');
-			foreach ($validator->messages()->all() as $key => $value) {
-				$errors[$key]= $value;
-			}
-			return Redirect::to('/admin/slider')
-				->with('err_msgs',$errors);
-		}
-
-        try {
-            $slider->setTitle(Input::get('title'));
-            $slider->setDescription(Input::get('description'));
-            $slider->setUrl(Input::get('url'));
-        }catch (Exception $e) {
-            return View::make('admin.slider.insert')->with('slider',$slider)->with('err_msgs',"entered values are wrong !");
-        }
         try {
             $slider->save();
         } catch (Exception $e) {
@@ -76,7 +48,6 @@ class SliderController extends \BaseController {
         }
         $this->doSaveTags($slider,'slider-tag');
 		$this->doUploadPhotos($slider, 'slider');
-		//do show successfully inserted
 		return Redirect::action('SliderController@index');
 	}
 

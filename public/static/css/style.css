@@ -11,9 +11,13 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800);
 @import url(http://fonts.googleapis.com/css?family=Fjalla+One);
 @import url(http://fonts.googleapis.com/css?family=Roboto:300italic);
-
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700&subset=cyrillic-ext,latin);
 
 html, body {}
+
+.menu_link {
+    font-family: 'Open Sans Condensed', sans-serif; !important
+}
 
 a[href^="tel:"] {
 	color: inherit;
@@ -162,9 +166,10 @@ h1 img{max-width: inherit;}
 
 h2{
 	margin: 0;
-	font:300 39px/42px 'Open Sans', Arial, sans-serif;
+	font:300 27px/42px 'Open Sans', Arial, sans-serif;
 	color:#c38326;
 	margin-top: 90px;
+    margin-bottom: 10px;
 	letter-spacing: 0px;
 }
 h2.v2{margin-top: 84px;}
@@ -517,7 +522,7 @@ header.content_header{
 .more_btn{
 	display: inline-block;
 	text-decoration:none;
-	font:600 14px/20px "Open Sans", Arial, sans-serif;
+	font:600 10px/20px "Open Sans", Arial, sans-serif;
 	color: #fff;
 	padding: 9px 17px 8px 23px;
 	/* padding-right: 22px; */

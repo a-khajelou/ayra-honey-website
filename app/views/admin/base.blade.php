@@ -42,21 +42,17 @@
             </button>
             <a class="navbar-brand" href="/admin">Error SWG Admin</a>
         </div>
-
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             @section('sidebar')
             <ul class="nav navbar-nav side-nav">
-                <li class="active"><a href="/admin"><i class="fa fa-dashboard"></i>صفحه ی اول</a></li>
+                <li class="active"><a href="/admin"><i class="fa fa-dashboard"></i>{{trans('general.first_page')}}</a></li>
                 <li class="dropdown">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i>{{trans('general.website_content')}}<b
                             class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/admin/brand">{{trans('general.brand')}}</a></li>
-                        <li><a href="/admin/category">نوع محصول</a></li>
-                        <li><a href="/admin/product">محصول نهایی</a></li>
                         <li><a href="/admin/slider">{{trans('general.slider')}}</a></li>
-                        <li><a href="/admin/static">{{trans('general.static')}}</a></li>
+                        <li><a href="/admin/honey">{{trans('general.honey')}}</a></li>
                     </ul>
                 </li>
             </ul>
@@ -64,7 +60,7 @@
             @section('header')
             <ul class="nav navbar-nav navbar-right navbar-user">
                 <li class="dropdown messages-dropdown">
-                    <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Messages
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i>{{trans('general.messages')}}
                         <span class="badge">0</span> <b class="caret"></b></a>
                     <!--<ul class="dropdown-menu">
                         <li class="dropdown-header">7 New Messages</li>
@@ -99,7 +95,7 @@
                     </ul>-->
                 </li>
                 <li class="dropdown alerts-dropdown">
-                    <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> Alerts <span
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i>{{trans('general.alert')}} <span
                             class="badge">0</span> <b class="caret"></b></a>
 <!--                    <ul class="dropdown-menu">
                         <li><a href="">Default <span class="label label-default">Default</span></a></li>
@@ -116,11 +112,11 @@
                     <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>@{{Auth::user()->name}} @{{Auth::user()->family}}<b
                             class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href=""><i class="fa fa-user"></i>Profile</a></li>
-                        <li><a href=""><i class="fa fa-envelope"></i> Inbox <span class="badge">0</span></a></li>
-                        <li><a href=""><i class="fa fa-gear"></i> Settings</a></li>
+                        <li><a href=""><i class="fa fa-user"></i>{{trans('general.profile')}}</a></li>
+                        <li><a href=""><i class="fa fa-envelope"></i>{{trans('general.inbox')}} <span class="badge">0</span></a></li>
+                        <li><a href=""><i class="fa fa-gear"></i>{{trans('general.setting')}}</a></li>
                         <li class="divider"></li>
-                        <li><a href="/user/logout"><i class="fa fa-power-off"></i> Log Out</a></li>
+                        <li><a href="/user/logout"><i class="fa fa-power-off"></i>{{trans('general.logout')}}</a></li>
                     </ul>
                 </li>
             </ul>
@@ -132,7 +128,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1>پنل مدیریتی
+                <h1>{{trans('general.admin_panel')}}
 <!--                    <small>Statistics Overview</small>-->
                 </h1>
                 <ol class="breadcrumb">

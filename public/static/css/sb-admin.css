@@ -9,7 +9,7 @@ For more info and more free Bootstrap 3 HTML themes, visit http://startbootstrap
 /* ATTN: This is mobile first CSS - to update 786px and up screen width use the media query near the bottom of the document! */
 
 /* Global Styles */
-@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
+@import 'bootstrap-glyphicons.css';
 body {
   margin-top: 50px;
 }

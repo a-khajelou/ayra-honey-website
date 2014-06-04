@@ -5,12 +5,15 @@
     <div class="grid_12">
         <div class="slider_wrapper">
             <div class="" id="camera_wrap">
-                <div data-src="/static/images/slide1.jpg"></div>
+                @foreach(Slider::all() as $slider)
+                <div data-src="{{Photo::getPhotoDir($slider->mainPhoto())}}"></div>
+                @endforeach
+<!--                <div data-src="/static/images/slide1.jpg"></div>
                 <div data-src="/static/images/slide2.jpg"></div>
                 <div data-src="/static/images/slide3.jpg"></div>
                 <div data-src="/static/images/slide4.jpg"></div>
                 <div data-src="/static/images/honey-slider.jpg"></div>
-            </div>
+-->            </div>
         </div>
     </div>
 </div>
@@ -18,7 +21,7 @@
 <div class="container_12">
     <div class="grid_12">
         <div class="wrapper mobile_txt_cntr">
-            <h2 class="v3 txt_cntr">The highest quality honey</h2>
+            <h2 class="v3 txt_cntr">{{trans('general.first_note')}}</h2>
             <h4 class="txt_cntr">Vivamus eget nibh. Etiam cursus leo vel metus. Nuacilisi. Aenean nec eros </h4>
 
             <div class="grid_3 alpha">
@@ -28,7 +31,7 @@
                     </div>
                 </a>
 
-                <h3>About Us</h3>
+                <h3>{{trans('general.about_us')}}</h3>
 
                 <p>Quisque nestibulum libero nisl, porta vel, scelerisque eget, malada at, mus eget nibh. Etiam cursus
                     leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci
@@ -43,7 +46,7 @@
                     </div>
                 </a>
 
-                <h3>Our Honey</h3>
+                <h3>{{trans('general.our_honey')}}</h3>
 
                 <p>Quisque nestibulum libero nisl, porta vel, scelerisque eget, malada at, mus eget nibh. Etiam cursus
                     leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci
@@ -58,7 +61,7 @@
                     </div>
                 </a>
 
-                <h3>Gallery</h3>
+                <h3>{{trans('general.gallery')}}</h3>
 
                 <p>Quisque nestibulum libero nisl, porta vel, scelerisque eget, malada at, mus eget nibh. Etiam cursus
                     leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci
@@ -73,7 +76,7 @@
                     </div>
                 </a>
 
-                <h3>Our Blog</h3>
+                <h3>{{trans('general.our_blog')}}</h3>
 
                 <p>Quisque nestibulum libero nisl, porta vel, scelerisque eget, malada at, mus eget nibh. Etiam cursus
                     leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci
@@ -84,72 +87,20 @@
 
 
         <div class="wrapper">
-            <h2 class="txt_cntr v2">The best for your health from our bees</h2>
+            <h2 class="txt_cntr v2">{{trans('general.second_note')}}</h2>
             <h4 class="txt_cntr">Estibulum ante ipsum primis in faucibus orci luctus et ultrices posuere</h4>
 
             <div class="list_carousel responsive">
                 <ul id="carousel">
+                    @foreach(Honey::all() as $honey)
+                    @if($honey->getAttr('title')!="")
                     <li>
-                        <img src="/static/images/page1_slider_pic1.jpg" alt="">
-                        <h5>scelerisque eget, malesuada</h5>
-                        <a href="#" class="more_btn">buy now</a>
+                        <img src="{{Photo::get($honey->mainPhoto())}}" alt="">
+                        <h5>{{$honey->getAttr('title')}}</h5>
+                        <a href="#" class="more_btn" onclick="alert('{{trans('general.not_ready_message')}}')">{{trans('general.buy_now')}}</a>
                     </li>
-                    <li>
-                        <img src="/static/images/page1_slider_pic2.jpg" alt="">
-                        <h5>scelerisque eget, malesuada</h5>
-                        <a href="#" class="more_btn">buy now</a>
-                    </li>
-                    <li>
-                        <img src="/static/images/page1_slider_pic3.jpg" alt="">
-                        <h5>scelerisque eget, malesuada</h5>
-                        <a href="#" class="more_btn">buy now</a>
-                    </li>
-                    <li>
-                        <img src="/static/images/page1_slider_pic4.jpg" alt="">
-                        <h5>scelerisque eget, malesuada</h5>
-                        <a href="#" class="more_btn">buy now</a>
-                    </li>
-                    <li>
-                        <img src="/static/images/page1_slider_pic5.jpg" alt="">
-                        <h5>scelerisque eget, malesuada</h5>
-                        <a href="#" class="more_btn">buy now</a>
-                    </li>
-                    <li>
-                        <img src="/static/images/page1_slider_pic6.jpg" alt="">
-                        <h5>scelerisque eget, malesuada</h5>
-                        <a href="#" class="more_btn">buy now</a>
-                    </li>
-
-                    <li>
-                        <img src="/static/images/page1_slider_pic1.jpg" alt="">
-                        <h5>scelerisque eget, malesuada</h5>
-                        <a href="#" class="more_btn">buy now</a>
-                    </li>
-                    <li>
-                        <img src="/static/images/page1_slider_pic2.jpg" alt="">
-                        <h5>scelerisque eget, malesuada</h5>
-                        <a href="#" class="more_btn">buy now</a>
-                    </li>
-                    <li>
-                        <img src="/static/images/page1_slider_pic3.jpg" alt="">
-                        <h5>scelerisque eget, malesuada</h5>
-                        <a href="#" class="more_btn">buy now</a>
-                    </li>
-                    <li>
-                        <img src="/static/images/page1_slider_pic4.jpg" alt="">
-                        <h5>scelerisque eget, malesuada</h5>
-                        <a href="#" class="more_btn">buy now</a>
-                    </li>
-                    <li>
-                        <img src="/static/images/page1_slider_pic5.jpg" alt="">
-                        <h5>scelerisque eget, malesuada</h5>
-                        <a href="#" class="more_btn">buy now</a>
-                    </li>
-                    <li>
-                        <img src="/static/images/page1_slider_pic6.jpg" alt="">
-                        <h5>scelerisque eget, malesuada</h5>
-                        <a href="#" class="more_btn">buy now</a>
-                    </li>
+                    @endif
+                    @endforeach
 
 
                 </ul>
@@ -159,45 +110,6 @@
             </div>
 
 
-        </div>
-
-
-        <div class="wrapper">
-            <h2 class="txt_cntr">Sweeten your day</h2>
-
-            <div class="grid_4 alpha">
-                <img src="/static/images/page1_pic1.jpg" alt="" class="img2 no_resize">
-
-                <div class="box">
-                    <h3 class="v2">Scelerisque</h3>
-
-                    <p>Quisa. Vestibulum libero nisl, porta vel, scelerisque eget, malesa at, neque. Vivamuscursus leo
-                        vel metusulla facilisi.</p>
-                    <a href="#" class="more_btn2">read more</a>
-                </div>
-            </div>
-            <div class="grid_4">
-                <img src="/static/images/page1_pic2.jpg" alt="" class="img2 no_resize">
-
-                <div class="box">
-                    <h3 class="v2">Malesuada</h3>
-
-                    <p>Quisa. Vestibulum libero nisl, porta vel, scelerisque eget, malesa at, neque. Vivamuscursus leo
-                        vel metusulla facilisi.</p>
-                    <a href="#" class="more_btn2">read more</a>
-                </div>
-            </div>
-            <div class="grid_4 omega">
-                <img src="/static/images/page1_pic3.jpg" alt="" class="img2 no_resize">
-
-                <div class="box">
-                    <h3 class="v2">Vivamus</h3>
-
-                    <p>Quisa. Vestibulum libero nisl, porta vel, scelerisque eget, malesa at, neque. Vivamuscursus leo
-                        vel metusulla facilisi.</p>
-                    <a href="#" class="more_btn2">read more</a>
-                </div>
-            </div>
         </div>
 
 

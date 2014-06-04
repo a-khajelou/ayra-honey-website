@@ -7,7 +7,7 @@
 
         <div class="wrapper">
             <div class="grid_4 alpha">
-                <h2>Contact Us</h2>
+                <h2 style="">{{trans('general.contact_us')}}</h2>
                 <figure>
                     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
                     <div style="overflow:hidden;height:224px;width:224px;">
@@ -34,17 +34,17 @@
                 <address>
                     <dl>
                         <dt>Error SWG Inc.<br>Tehran, Iran ,<br>[some other address :D] .</dt>
-                        <dd><span>Freephone:</span> +98 939 979 1134</dd>
-                        <dd><span>Telephone:</span> +98 939 979 1134</dd>
-                        <dd><span>FAX:</span> +98 939 979 1134</dd>
-                        <dd>E-mail: <a href="#" class="link1">info@ayrahoneyhouse.com</a></dd>
+                        <dd><span>{{trans('general.phone')}}:</span> +98 939 979 1134</dd>
+                        <dd><span>{{trans('general.phone')}}:</span> +98 939 979 1134</dd>
+                        <dd><span>{{trans('general.phone')}}:</span> +98 939 979 1134</dd>
+                        <dd>{{trans('general.email')}}: <a href="#" class="link1">info@ayrahoneyhouse.com</a></dd>
                     </dl>
                 </address>
             </div>
 
 
             <div class="grid_7 prefix_1 omega">
-                <h2>Get In Touch</h2>
+                <h2>{{trans('general.get_in_touch')}}</h2>
 
                 <form id="form">
                     <div class="success_wrapper">
@@ -53,33 +53,33 @@
                     </div>
                     <fieldset>
                         <label class="name">
-                            <input type="text" value="Name:">
+                            <input type="text" value="{{trans('general.name')}}:">
                             <br class="clear">
                             <span class="error error-empty">*This is not a valid name.</span><span
                                 class="empty error-empty">*This field is required.</span>
                         </label>
                         <label class="email">
-                            <input type="text" value="E-mail:">
+                            <input type="text" value="{{trans('general.email')}}:">
                             <br class="clear">
                             <span class="error error-empty">*This is not a valid email address.</span><span
                                 class="empty error-empty">*This field is required.</span>
                         </label>
                         <label class="phone">
-                            <input type="tel" value="Phone:">
+                            <input type="tel" value="{{trans('general.phone')}}:">
                             <br class="clear">
                             <span class="error error-empty">*This is not a valid phone number.</span><span
                                 class="empty error-empty">*This field is required.</span>
                         </label>
                         <label class="message">
-                            <textarea>Message:</textarea>
+                            <textarea>{{trans('general.phone')}}:</textarea>
                             <br class="clear">
                             <span class="error">*The message is too short.</span> <span class="empty">*This field is required.</span>
                         </label>
 
                         <div class="clear"></div>
                         <div class="btns">
-                            <a data-type="submit" class="more_btn2">Submit</a>
-                            <a data-type="reset" class="more_btn2">Clear</a>
+                            <a data-type="submit" class="more_btn2">{{trans('general.submit')}}</a>
+                            <a data-type="reset" class="more_btn2">{{trans('general.clear')}}</a>
 
                             <div class="clear"></div>
                         </div>

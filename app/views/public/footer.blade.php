@@ -9,19 +9,18 @@
                     <div class="grid_3">
                         <nav>
                             <ul class="sf-menu">
-                                <li @if(Request::is('about-us'))class="current"@endif><a href="/about-us">About us</a></li>
-                                <li @if(Request::is('honey-products'))class="current"@endif><a href="/honey-products"><span></span>Honey products</a></li>
-                                <li @if(Request::is('bees'))class="current"@endif><a href="/bees">Bees</a></li>
-                                <li @if(Request::is('farm-tour'))class="current"@endif><a href="/farm-tour">Farm tour</a></li>
-                                <li @if(Request::is('ordering'))class="current"@endif><a href="/ordering">Ordering</a></li>
-                                <li @if(Request::is('contact-us'))class="current"@endif><a href="contact-us">Contact us</a></li>
+                                <li @if(Request::is('about-us'))class="current"@endif><a href="/about-us">{{trans('general.about_us')}}</a></li>
+                                <li @if(Request::is('honey-products'))class="current"@endif><a href="/honey-products"><span></span>{{trans('general.honey_products')}}</a></li>
+                                <li @if(Request::is('bees'))class="current"@endif><a href="/blog">{{trans('general.blog')}}</a></li>
+                                <li @if(Request::is('ordering'))class="current"@endif><a href="/ordering">{{trans('general.ordering')}}</a></li>
+                                <li @if(Request::is('contact-us'))class="current"@endif><a href="contact-us">{{trans('general.contact_us')}}</a></li>
                             </ul>
                         </nav>
                     </div>
 
 
                     <div class="grid_3">
-                        <h2 class="h2_footer">Follow us</h2>
+                        <h2 class="h2_footer">{{trans('general.follow_us')}}</h2>
                         <ul class="soc_icons">
                             <li><a href="#"><i class="icon-google-plus"></i></a></li>
                             <li><a href="#"><i class="icon-twitter"></i></a></li>
@@ -34,20 +33,20 @@
                 </div>
 
                 <div class="grid_3 omega">
-                    <h2 class="h2_footer">Newsletter:</h2>
+                    <h2 class="h2_footer">{{trans('general.news_letter')}} :</h2>
 
                     <form id="subscribe-form">
                         <div class="success">Your subscription request has been sent!</div>
                         <fieldset>
                             <label class="name">
-                                <input type="text" value="Name">
+                                <input type="text" value="{{trans('general.name')}}">
                                 <span class="error">*This is not a valid name.</span>
                             </label>
                             <label class="email">
-                                <input type="email" value="Email" onFocus="myFocus(this);" onBlur="myBlur(this);"/>
+                                <input type="email" value="{{trans('general.email')}}" onFocus="myFocus(this);" onBlur="myBlur(this);"/>
                                 <span class="error">*This is not a valid email address.</span></label>
 
-                            <div class="btns"><a href="#" class="button more_btn3" data-type="submit">sign up</a></div>
+                            <div class="btns"><a href="#" class="button more_btn3" data-type="submit">{{trans('general.sign_up')}}</a></div>
                         </fieldset>
                     </form>
                 </div>

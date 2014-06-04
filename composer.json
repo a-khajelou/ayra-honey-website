@@ -4,6 +4,7 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
+        "toddish/verify": "2.2.*" ,
 		"laravel/framework": "4.1.*"
 	},
 	"autoload": {

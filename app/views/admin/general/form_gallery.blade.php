@@ -6,7 +6,7 @@
 	<div class="col-md-12 pull-left" >
 		@foreach($obj->photos as $photo)
 		<div class="pull-left" >
-			<img src="{{{$photo->getPhotoDir($photo, 'modal') }}}"/>
+			<img src="{{{$photo->getPhotoDir($photo) }}}" style="width: 40%"/>
 			<a class="wi-img-delete-btn" href="/admin/photo/{{$photo->id}}">X</a>
 			<input type="hidden" name="{{{$gallery_id}}}-main-photo"
 				value="{{$photo->id}}" />
@@ -33,3 +33,4 @@
   	</div>
 </div>
 @endif
+<br/>

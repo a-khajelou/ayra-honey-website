@@ -27,14 +27,9 @@ class BaseModel extends Eloquent
         return $this->morphMany('AttachedFile', 'fileable');
     }
 
-    public function likes()
+    public function contents()
     {
-        return $this->morphMany('Like', 'likable');
-    }
-
-    public function dislikes()
-    {
-        return $this->morphMany('Dislike', 'dislikable');
+        return $this->morphMany('Content', 'contentable');
     }
 
     public function hasTag($tagName)
@@ -45,11 +40,6 @@ class BaseModel extends Eloquent
             }
         }
         return false;
-    }
-
-    public function comments()
-    {
-        return $this->morphMany('Comment', 'commentable');
     }
 
     public function is_trashable()
@@ -104,13 +94,13 @@ class BaseModel extends Eloquent
         return $photosDir;
     }
 
-    public static function getPhotoDir($photo, $size='')
+    public static function getPhotoDir($photo, $size = '')
     {
-        if(is_null($photo))
+        if (is_null($photo))
             return '';
-        if(get_class($photo)!='Photo')
+        if (get_class($photo) != 'Photo')
             throw new Exception("Argument 1 passed to BaseModel::getPhotoDir() must be an instance of Photo (basemodel)", 1);
-            
+
         $dim = '';
         if (in_array($size, array('org', 'orginal', 'base', 'main', NULL)))
             $size = '';
@@ -198,89 +188,81 @@ class BaseModel extends Eloquent
         $this->attachedFiles()->save($file);
         return $file;
     }
-    // public function getAttr($title, $lang=NULL, $forCheck=false){
-    //     $ans=NULL;
-    //     if($this->id != NULL){
 
-    //         if($lang==NULL)
-    //             $lang = app::getLocale();
+    public function getAttr($title, $lang = NULL)
+    {
+        $ans = NULL;
+        if ($this->id != NULL) {
 
-    //         if(!in_array($title, $this::$variables)){
-    //             echo $title.' variable is not in '.get_class($this);
-    //             die();
-    //         }
+            if ($lang == NULL)
+                $lang = app::getLocale();
 
-    //         if(is_string($lang))
-    //             $lang = Language::where('title', '=', $lang)->first();
-    //         $lang_id = $lang->id;
+            if (!in_array($title, $this::$variables)) {
+                echo $title . ' variable is not in ' . get_class($this);
+                die();
+            }
+
+            $ans = Content::where('contentable_id', '=', $this->id)
+                ->where('contentable_type', '=', get_class($this))
+                ->where('lang', '=', $lang)
+                ->where('title', '=', $title)->first();
+        }
+        if ($ans != NULL)
+            return $ans->value;
+        else
+            return NULL;
+    }
+
+    public function setAttr($fieldName, $value, $lang = NULL)
+    {
+
+        if ($this->id == NULL) {
+            echo "first save your obj and then set it's attr :)";
+            die();
+        }
+
+        if ($lang == NULL)
+            $lang = app::getLocale();
+
+        if (!in_array($fieldName, $this::$variables)) {
+            echo $fieldName . ' variable is not in ' . get_class($this);
+            die();
+        }
 
 
-    //         $ans = Content::where('contentable_id', '=', $this->id)
-    //             ->where('contentable_type', '=', get_class($this))
-    //             ->where('language_id', '=', $lang_id)
-    //             ->where('title', '=', $title)->first();
-    //     }
-    //     if($ans!= NULL)
-    //         if($forCheck)
-    //             return $ans;
-    //         else
-    //             return $ans->body;
-    //     else
-    //         if($forCheck)
-    //             return false;
-    //         else
-    //             return NULL;
-    // }
-    // public function setAttr($fieldName, $value, $lang=NULL){
+        $ans = $this->contents()->whereTitle($fieldName)->whereLang($lang)->first();
+        if ($ans != null) {
+//             update existing attr
+            $ans->value = $value;
+            $ans->save();
 
-    //     if($this->id == NULL){
-    //         echo "first save your obj and then set it's attr :)";
-    //         die();
-    //     }
+        } else {
+            //insert new attr
+            $c = new Content();
+            $c->title = $fieldName;
+            $c->value = $value;
+            $c->lang = $lang;
 
-    //     if($lang==NULL)
-    //         $lang = app::getLocale();
-    //     if(is_string($lang))
-    //         $lang = Language::where('title', '=', $lang)->first();
-    //     $lang_id = $lang->id;
+            $this->contents()->save($c);
+        }
+    }
 
-    //     if(!in_array($fi*eldName, $this::$variables)){
-    //         echo $fieldName.' variable is not in '.get_class($this);
-    //         die();
-    //     }
+    public function deleteAttr($fieldName, $lang)
+    {
 
-    //     //
-    //     $ans = $this->getAttr($fieldName, $lang, true);
-    //     if($ans!=false || $ans!=NULL){
-    //         //update existing attr
-    //         $ans->body = $value;
-    //         $ans->save();
-
-    //     }else{
-    //         //insert new attr
-    //         $c = new Content();
-    //         $c->title = $fieldName;
-    //         $c->body = $value;
-
-    //         $lang->content()->save($c);
-    //         $this->contents()->save($c);
-    //     }
-    // }
-    // public function deleteAttr($fieldName, $lang){
-
-    //     if($this->id == NULL){
-    //         echo "first save your obj and then set it's attr :)";
-    //         die();
-    //     }
-    //     $ans = $this->getAttr($fieldName, $lang, true);
-    //     if($ans!=false || $ans!=NULL){
-    //         //update existing attr
-    //         $ans->delete();
-    //         return true;
-    //     }else{
-    //         return false;
-    //     }
-    // }
+        if ($this->id == NULL) {
+            echo "first save your obj and then set it's attr :)";
+            die();
+        }
+        $ans = $this->getAttr($fieldName, $lang);
+        if ($ans != NULL) {
+            //update existing attr
+            $ans->delete();
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 
     public static function setTag($name)
@@ -320,12 +302,13 @@ class BaseModel extends Eloquent
             }
         }
         usort($res, "cmp");
-        $res=array_reverse($res);
-        return array_slice($res,0,$count);
+        $res = array_reverse($res);
+        return array_slice($res, 0, $count);
 
     }
 
-    public function scopeNearlyCreated($query,$count){
+    public function scopeNearlyCreated($query, $count)
+    {
         return $query->get()->all();
     }
 

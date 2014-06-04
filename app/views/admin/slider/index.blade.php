@@ -13,7 +13,6 @@
 		<thead>
 			<tr>
 				<th class='header'>#</th>
-                <th class='header'>عنوان</th>
 				@if(Input::has('deleted') || (Input::has('page_mode') && Input::get('page_mode')=='deleted'))
 					<th class='header'>{{trans('general.restore')}}<i class="fa fa-sort"></i></th>
 				@endif
@@ -25,9 +24,6 @@
 		@foreach ($all_objs as $obj)
 			<tr>
     			<td>{{{$counter}}}</td>
-                <td>
-                    {{$obj->title}}
-                </td>
     			<td>
     				{{Form::open(array('url' => '/admin/slider/'.$obj->id, 'method' => 'delete'))}}
     					<button type="submit" class="btn btn-warning" >

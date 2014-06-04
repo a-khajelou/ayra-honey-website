@@ -6,13 +6,24 @@ class DbController extends BaseController
     {
         ini_set('max_execution_time', 600);
 
+        Schema::dropIfExists('content');
+        Schema::dropIfExists('tag');
         Schema::dropIfExists('photo');
         Schema::dropIfExists('attached_file');
-        Schema::dropIfExists('product');
+        Schema::dropIfExists('honey');
         Schema::dropIfExists('slider');
         Schema::dropIfExists('users');
 
 
+        Schema::create('tag', function ($table) {
+            $table->engine = 'InnoDB';
+            $table->bigIncrements('id'); //;
+            $table->string('tagable_type')->index();
+            $table->integer('tagable_id')->unsigned()->index();
+            $table->string('name')->index();
+            $table->timestamps();
+
+        });
         Schema::create('users', function ($table) {
             $table->engine = 'InnoDB';
 
@@ -28,14 +39,10 @@ class DbController extends BaseController
         });
 
 
-        Schema::create('product', function ($table) {
+        Schema::create('honey', function ($table) {
             $table->engine = 'InnoDB';
 
             $table->bigIncrements('id');
-            $table->string('title', 50);
-            $table->string('description');
-
-            $table->integer('price');
 
             $table->timestamps();
             $table->softDeletes();
@@ -61,6 +68,19 @@ class DbController extends BaseController
             $table->integer('fileable_id')->unsigned()->index();
             $table->string('path');
             $table->string('real_name');
+            $table->timestamps();
+        });
+
+        Schema::create('content', function ($table) {
+            $table->engine = 'InnoDB';
+
+            $table->bigIncrements('id'); //;
+            $table->string('contentable_type')->index();
+            $table->integer('contentable_id')->unsigned()->index();
+            $table->string('title')->nullable();
+            $table->string('value')->nullable();
+            $table->string('lang');
+
             $table->timestamps();
         });
 
