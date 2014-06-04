@@ -41,4 +41,5 @@ Route::group(
 
 Route::controller('/user', 'UserController');
 
-Route::Controller('/', "HomeController");
+Route::controller('test', 'TestController');
+Route::controller('/', "HomeController");
