@@ -571,6 +571,15 @@ header.content_header{
 	text-transform: uppercase;
 	letter-spacing: 1px;
 }
+#login-form .more_btn3{
+
+    border: 1px solid #f0bf4f;
+}
+#login-form .more_btn3:hover{
+    color: #fff;
+    background: #f8efc0;
+}
+
 .more_btn3:hover{
 	color: #fff;
 	background: #ddb24f;
@@ -906,4 +915,22 @@ footer{
 :-ms-input-placeholder {
     font-weight: bold;
     color: #ffffff;
+}
+#login-form  .btns {margin-left: 0px;}
+#login-form input{width: 100%; display: block;}
+#login-form label {display:block;}
+#login-form input {
+    border:1px solid #f0bf4f;
+background-color: #FDDB9F;
+    color:#ddb24f;}
+#login-form span{
+
+    font-size: 16px;
+   color: #cccccc;
+}
+#login-form{
+    padding:15px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #888888;
 }

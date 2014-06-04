@@ -4,18 +4,28 @@
     <div class="grid_12">
 
         <img src="/static/images/big_pic1.jpg" alt="" class="img3">
+        <br><br>
+<br><br>
+        <div class="grid_3"> &nbsp;</div>
 
 
+        <form id="login-form" class="grid_6">
+        <span>
+            Please Enter Your Information To LogIn Your Account:
+        </span><br><br>
+            <fieldset>
+                <label class="name">
+                    <input type="text" placeholder="User Name">
 
-        <div class="login-form">
-            <form name="" action="">
-                <label class="">User Name:</label>
-                <input type="text" name="" placeholder="User Name" class="input-sm">
-                <label class="">Password:</label>
-                <input type="password" name="" placeholder="Password" class="input-sm">
-                <input type="submit" class="btn btn-warning">
-            </form>
-        </div>
+                </label>
+                <label class="name">
+
+                    <input type="password" placeholder="Password">
+                </label>
+
+                <div class="btns"><a href="#" class="button more_btn3" data-type="submit">Log In</a></div>
+            </fieldset>
+        </form>
 
     </div>
 </div>
