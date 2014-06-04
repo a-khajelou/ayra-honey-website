@@ -55,4 +55,12 @@ class HomeController extends BaseController {
         return $redirect;
     }
 
+    public function getLogin(){
+        return View::make('public.login');
+    }
+
+    public function getHoney(){
+        return View::make('public.honey');
+    }
+
 }
