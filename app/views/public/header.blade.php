@@ -10,9 +10,7 @@
     <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="stylesheet" href="/static/css/bootstrap.css">
     <script src="/static/js/jquery.js"></script>
-    <script src="/static/js/bootstrap.js"></script>
     <script src="/static/js/jquery-migrate-1.1.1.js"></script>
     <script src="/static/js/jquery.easing.1.3.js"></script>
     <script src="/static/js/scroll_to_top.js"></script>
