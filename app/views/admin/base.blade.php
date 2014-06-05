@@ -11,9 +11,6 @@
     ?>
     <title>{{$end}} page - Error Admin</title>
 
-    <script src="/static/ckeditor/ckeditor.js"></script>
-    <link rel="stylesheet" href="/static/ckeditor/sample.css">
-
     <!-- Bootstrap core CSS -->
     <link href="/static/css/bootstrap.css" rel="stylesheet">
     <link href="/static/css/tagmanager.css" rel="stylesheet">
@@ -21,9 +18,8 @@
     <!-- Add custom CSS here -->
     <link rel="stylesheet" href="/static/css/bootstrap-glyphicons.css">
     <link rel="stylesheet" href="/static/css/sb-admin.css">
-    <link rel="stylesheet" href="/static/fonts/css/fonts.min.css">
+<!--    <link rel="stylesheet" href="/static/fonts/css/fonts.min.css">-->
     <!-- Page Specific CSS -->
-    <link rel="stylesheet" href="/static/css/morris-0.4.3.min.css">
     @section('css')
 
     @stop
@@ -56,6 +52,8 @@
                     <ul class="dropdown-menu">
                         <li><a href="/admin/slider">{{trans('general.slider')}}</a></li>
                         <li><a href="/admin/honey">{{trans('general.honey')}}</a></li>
+                        <li><a href="/admin/blog">{{trans('general.blog')}}</a></li>
+
                     </ul>
                 </li>
             </ul>
@@ -64,38 +62,21 @@
             <ul class="nav navbar-nav navbar-right navbar-user">
                 <li class="dropdown messages-dropdown">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i>{{trans('general.messages')}}
-                        <span class="badge">0</span> <b class="caret"></b></a>
-                    <!--<ul class="dropdown-menu">
-                        <li class="dropdown-header">7 New Messages</li>
+                        <span class="badge">{{Message::whereIsRead(false)->count()}}</span> <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header">{{Message::whereIsRead(false)->count()}} New Messages</li>
+                        @foreach(Message::whereIsRead(false)->get() as $message)
                         <li class="message-preview">
-                            <a href="">
-                                <span class="avatar"><img src="http://placehold.it/50x50"></span>
-                                <span class="name">John Smith:</span>
-                                <span class="message">Hey there, I wanted to ask you something...</span>
-                                <span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>
+                            <a href="/admin/message/view?id={{$message->id}}">
+                                <span class="name">{{$message->name}}:</span>
+                                <span class="message">{{substr($message->message,0,15)}} ...</span>
+                                <span class="time"><i class="fa fa-clock-o"></i>{{$message->created_at}}</span>
                             </a>
                         </li>
                         <li class="divider"></li>
-                        <li class="message-preview">
-                            <a href="">
-                                <span class="avatar"><img src="http://placehold.it/50x50"></span>
-                                <span class="name">John Smith:</span>
-                                <span class="message">Hey there, I wanted to ask you something...</span>
-                                <span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li class="message-preview">
-                            <a href="">
-                                <span class="avatar"><img src="http://placehold.it/50x50"></span>
-                                <span class="name">John Smith:</span>
-                                <span class="message">Hey there, I wanted to ask you something...</span>
-                                <span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="">View Inbox <span class="badge">7</span></a></li>
-                    </ul>-->
+                        @endforeach
+                        <li><a href="">View Inbox <span class="badge">{{Message::whereIsRead(false)->count()}}</span></a></li>
+                    </ul>
                 </li>
                 <li class="dropdown alerts-dropdown">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i>{{trans('general.alert')}} <span
@@ -164,13 +145,12 @@
 
 <!-- Page Specific Plugins -->
 <script src="/static/js/raphael-min.js"></script>
-<script src="/static/js/morris-0.4.3.min.js"></script>
 <script src="/static/js/morris/chart-data-morris.js"></script>
 <script src="/static/js/tablesorter/jquery.tablesorter.js"></script>
 <script src="/static/js/tablesorter/tables.js"></script>
 <script src="/static/js/typehead.js"></script>
 <script src="/static/js/tagmanager.js"></script>
 <script src="/static/js/scripts.js"></script>
-
+<script src="/static/ckeditor/ckeditor.js"></script>
 </body>
 </html>

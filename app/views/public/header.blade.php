@@ -4,14 +4,19 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
 
 <head>
+    <style>
+        .hide{
+            display: none;
+        }
+    </style>
     <title>AyRa Honey House - Bee Healthy</title>
     <meta charset="utf-8">
     <meta name="format-detection" content="telephone=no"/>
 
-    <link type="text/css" rel="stylesheet" href="http://localhost:8080/static/ckeditor/contents.css?t=E4KA">
     <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="/static/css/style.css">
+    <link type="text/css" rel="stylesheet" href="/static/ckeditor/contents.css">
 
     <script src="/static/js/jquery.js"></script>
     <script src="/static/js/jquery-migrate-1.1.1.js"></script>
@@ -51,6 +56,7 @@
     <script src="/static/js/html5shiv.js"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="/static/css/ie.css">
     <![endif]-->
+
 </head>
 <body>
 <!--button back top-->

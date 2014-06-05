@@ -55,8 +55,10 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'ayra',
-			'username'  => 'root',
+//			'database'  => 'ayra',
+			'database'  => 'errorswg_ayra',
+//			'username'  => 'root',
+			'username'  => 'errorswg_root',
 			'password'  => 'mysql123',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',

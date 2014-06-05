@@ -3,7 +3,7 @@
 <?php
 	$counter = 1;
     if (Input::has('page'))
-       $counter+=Honey::$paginate_per_page*(Input::get('page')-1);
+       $counter+=Blog::$paginate_per_page*(Input::get('page')-1);
     $removeOrDelete='remove';
     if(Input::has('deleted'))
         $removeOrDelete='retweet';
@@ -25,9 +25,9 @@
 		@foreach ($all_objs as $obj)
 			<tr>
     			<td>{{{$counter}}}</td>
-                <td>{{$obj->getAttr('title')}}</td>
+                <td>{{$obj->title}}</td>
     			<td>
-    				{{Form::open(array('url' => '/admin/slider/'.$obj->id, 'method' => 'delete'))}}
+    				{{Form::open(array('url' => '/admin/blog/'.$obj->id, 'method' => 'delete'))}}
     					<button type="submit" class="btn btn-warning" >
 						  <span class="glyphicon glyphicon-{{$removeOrDelete}}"></span>
 						</button>
@@ -35,7 +35,7 @@
     			</td>
     			@if(Input::has('deleted') || (Input::has('page_mode') && Input::get('page_mode')=='deleted'))
     			<td>
-    				{{Form::open(array('url' => '/admin/honey/'.$obj->id.'?forcedelete=true', 'method' => 'delete'))}}
+    				{{Form::open(array('url' => '/admin/blog/'.$obj->id.'?forcedelete=true', 'method' => 'delete'))}}
     					<button type="submit" class="btn btn-danger" >
 						  <span class="glyphicon glyphicon-remove"></span>
 						</button>
@@ -43,7 +43,7 @@
     			</td>
     			@endif
     			<td>
-    				{{Form::open(array('url' => '/admin/honey/'.$obj->id.'/edit', 'method' => 'get'))}}
+    				{{Form::open(array('url' => '/admin/blog/'.$obj->id.'/edit', 'method' => 'get'))}}
     					<button type="submit" class="btn btn-info" >
 						  <span class="glyphicon glyphicon-pencil"></span>
 						</button>

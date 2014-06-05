@@ -27,7 +27,7 @@
     			<td>{{{$counter}}}</td>
                 <td>{{$obj->getAttr('title')}}</td>
     			<td>
-    				{{Form::open(array('url' => '/admin/slider/'.$obj->id, 'method' => 'delete'))}}
+    				{{Form::open(array('url' => '/admin/honey/'.$obj->id, 'method' => 'delete'))}}
     					<button type="submit" class="btn btn-warning" >
 						  <span class="glyphicon glyphicon-{{$removeOrDelete}}"></span>
 						</button>

@@ -17,14 +17,20 @@
     <div class="col-lg-6">
         <div class="form-group input-group">
             <input type="text" name="title" placeholder="title" @if($obj->id!=null)value="{{$obj->title}}"@endif/>
+            &nbsp&nbsp
+            <select name="lang">
+                <option value="en">
+                    English
+                </option>
+                <option value="ru">
+                    русский
+                </option>
+            </select>
         </div>
         <div class="form-group input-group">
-            <textarea class="ckeditor" cols="80" id="blog_post" name="blog_post" rows="10">
+            <textarea class="text_box ckeditor" cols="80" id="content" name="content" rows="10">
+                @if($obj->id!=null){{$obj->content}}@endif
             </textarea>
-        </div>
-        <div class="form-group input-group">
-        </div>
-        <div class="form-group input-group">
         </div>
 
     </div>

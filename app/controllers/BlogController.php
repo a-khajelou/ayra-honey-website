@@ -27,12 +27,12 @@ class BlogController extends BaseController {
 
     public function create()
     {
-        return View::make('admin.blog.insert')->with('obj', new Honey());
+        return View::make('admin.blog.insert')->with('obj', new Blog());
     }
 
     public function edit($id)
     {
-        return View::make('admin.blog.insert')->with('obj', Honey::withTrashed()->find($id));
+        return View::make('admin.blog.insert')->with('obj', Blog::withTrashed()->find($id));
     }
 
     public function store()
@@ -74,11 +74,11 @@ class BlogController extends BaseController {
         $obj->content=Input::get('content');
         $obj->save();
 
-        $this->doSaveTags($obj, 'honey');
-        $this->doUploadPhotos($obj, 'honey');
+        $this->doSaveTags($obj, 'blog');
+        $this->doUploadPhotos($obj, 'blog');
 
         //do show successfully inserted
-        return Redirect::action('HoneyController@index');
+        return Redirect::action('BlogController@index');
     }
 
 

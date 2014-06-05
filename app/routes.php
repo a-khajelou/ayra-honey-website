@@ -12,6 +12,7 @@
 */
 
 Route::any('/createdb', 'DbController@createDb');
+Route::post('/save-message', 'MessageController@postSave');
 
 Route::group(
     array(
@@ -24,7 +25,6 @@ Route::group(
         Route::resource('slider', 'SliderController');
         Route::resource('honey', 'HoneyController');
         Route::resource('blog', 'BlogController');
-
         Route::resource('tags', 'TagController', array('only' => array('index', 'delete')));
         Route::any('json/{type?}/{id?}', 'TagController@handle');
 
@@ -38,6 +38,7 @@ Route::group(
             }
             return Redirect::back();
         });
+        Route::controller('message', 'MessageController');
     });
 
 Route::controller('/user', 'UserController');

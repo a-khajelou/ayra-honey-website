@@ -80,8 +80,6 @@
                         <div class="btns">
                             <a data-type="submit" class="more_btn2">{{trans('general.submit')}}</a>
                             <a data-type="reset" class="more_btn2">{{trans('general.clear')}}</a>
-
-                            <div class="clear"></div>
                         </div>
                     </fieldset>
                 </form>

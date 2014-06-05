@@ -2,49 +2,29 @@
 @section('body')
 <!--=======content================================-->
 
-
 <div class="container_12">
     <div class="grid_12">
 
         <img src="/static/images/big_pic1.jpg" alt="" class="img3">
 
 
-
         <div class="grid_8 alpha">
-            <h2>Articles About Bees</h2>
+            <h2>{{trans('general.our_blog')}}</h2>
+            @foreach(Blog::whereLang(App::getLocale())->get() as $blogPost)
             <div class="wrapper marBot2">
-                <img src="/static/images/page3_pic1.jpg" alt="" class="img5">
-                <div class="box">
-                    <h3 class="v2"><a href="#" class="link3">Praesent justo dolor, lobortis quis, lobortis dignissim</a></h3>
-                    <p>Quisa. Vestibulum libero nisl, porta vel, scelerisque eget, malesa at, neque. Vivamuscursus leo vel metusulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec augue.</p>
-                    <a href="#" class="more_btn2">read more</a>
-                </div>
-            </div>
-            <div class="wrapper marBot2">
-                <img src="/static/images/page3_pic2.jpg" alt="" class="img5">
-                <div class="box">
-                    <h3 class="v2"><a href="#" class="link3">Donec in velit vel ipsum uctor pulvinars quis, lobortis</a></h3>
-                    <p>Quisa. Vestibulum libero nisl, porta vel, scelerisque eget, malesa at, neque. Vivamuscursus leo vel metusulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec augue.</p>
-                    <a href="#" class="more_btn2">read more</a>
-                </div>
-            </div>
-            <div class="wrapper marBot2">
-                <img src="/static/images/page3_pic3.jpg" alt="" class="img5">
-                <div class="box">
-                    <h3 class="v2"><a href="#" class="link3">Dolor, lobortis quis, lobortis dignissimlvinar ac</a></h3>
-                    <p>Quisa. Vestibulum libero nisl, porta vel, scelerisque eget, malesa at, neque. Vivamuscursus leo vel metusulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec augue.</p>
-                    <a href="#" class="more_btn2">read more</a>
-                </div>
-            </div>
-            <div class="wrapper">
-                <img src="/static/images/page3_pic4.jpg" alt="" class="img5">
-                <div class="box">
-                    <h3 class="v2"><a href="#" class="link3">Vestibulum ante ipsum primiss quis, lobortis</a></h3>
-                    <p>Quisa. Vestibulum libero nisl, porta vel, scelerisque eget, malesa at, neque. Vivamuscursus leo vel metusulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec augue.</p>
-                    <a href="#" class="more_btn2">read more</a>
-                </div>
-            </div>
 
+                <h3 class="v2"><a href="#" class="link3">{{$blogPost->title}}</a></h3>
+
+                <div spellcheck="false"
+                     contenteditable="false"
+                     class="text-container cke_editable cke_editable_themed cke_contents_ltr cke_show_borders">
+                    <div id="short-text">{{substr($blogPost->content,0,300)}}</div><div id="complete-text">{{substr($blogPost->content,300,strlen($blogPost->content))}}</div>
+                    <a id="toggle-button" class="more_btn2">Read More</a>
+                </div>
+            </div>
+            <br/>
+            <hr/>
+            @endforeach
 
         </div>
 
@@ -85,11 +65,24 @@
         </div>
 
 
-
-
-
     </div>
 </div>
 
 </div>
+@stop
+@section('js')
+<script>
+    $(document).ready(function () {
+        $('[id=complete-text]').addClass('hide');
+        $('[id=toggle-button]').on('click', function () {
+            if ($(this).text() == 'Read More') {
+                $(this).html('Read Less');
+            } else {
+                $(this).html('Read More');
+            }
+            $(this).prev('#short-text').toggleClass('hide');
+            $(this).prev('#complete-text').toggleClass('hide');
+        });
+    });
+</script>
 @stop

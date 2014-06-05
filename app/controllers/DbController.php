@@ -14,6 +14,7 @@ class DbController extends BaseController
         Schema::dropIfExists('slider');
         Schema::dropIfExists('users');
         Schema::dropIfExists('blog');
+        Schema::dropIfExists('message');
 
         Schema::create('tag', function ($table) {
             $table->engine = 'InnoDB';
@@ -100,6 +101,20 @@ class DbController extends BaseController
             $table->string('lang');
             $table->string('title');
             $table->text('content');
+
+            $table->timestamps();
+            $table->softDeletes();
+        });
+
+        Schema::create('message' , function($table){
+            $table->engine = 'InnoDB' ;
+
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('email');
+            $table->string('phone');
+            $table->text('message');
+            $table->boolean('is_read');
 
             $table->timestamps();
             $table->softDeletes();
